@@ -122,7 +122,7 @@ set $workspace1 "1: Chrome "
 set $workspace2 "2: Terminal "
 set $workspace3 "3: Code "
 set $workspace4 "4: Networking "
-set $workspace5 "5: "
+set $workspace5 "5: VM  "
 set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
@@ -159,6 +159,7 @@ assign [class="chrome"] $workspace1
 assign [class="Gnome-terminal"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="GNS3"] $workspace4
+assign [class="Vmware"] $workspace5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

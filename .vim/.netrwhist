@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/pc-377/.vim'
+let g:netrw_dirhist_5='/home/pc-377/.config/gtk-3.0'
+let g:netrw_dirhist_4='/home/pc-377'
+let g:netrw_dirhist_3='/home/pc-377/.config'
+let g:netrw_dirhist_2='/home/pc-377/.config/Code'
+let g:netrw_dirhist_1='/home/pc-377/.config'

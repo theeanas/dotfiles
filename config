@@ -48,6 +48,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start file gui manager
+bindsym $mod+backslash exec nautilus
+
+bindsym $mod+shift+s exec gnome-screenshot
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -78,8 +84,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
@@ -123,11 +127,11 @@ set $workspace2 "2: Terminal "
 set $workspace3 "3: Code "
 set $workspace4 "4: Networking "
 set $workspace5 "5: VM  "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: "
-set $workspace10 "10: "
+set $workspace6 "6: _" 
+set $workspace7 "7: _" 
+set $workspace8 "8: _" 
+set $workspace9 "9: _"
+set $workspace10 "10: CP "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -158,7 +162,9 @@ assign [class="Firefox"] $workspace1
 assign [class="chrome"] $workspace1
 assign [class="Gnome-terminal"] $workspace2
 assign [class="Code"] $workspace3
+assign [class="Vncviewer"] $workspace3
 assign [class="GNS3"] $workspace4
+assign [class="wireshark"] $workspace4
 assign [class="Vmware"] $workspace5
 
 # reload the configuration file
@@ -262,4 +268,5 @@ exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
 exec_always compton -f
-exec_always feh --bg-fill Downloads/wallpapersden.com_red-island_5120x2880.jpg
+#exec_always feh --bg-fill Downloads/wallpapersden.com_red-island_5120x2880.jpg
+exec_always feh --bg-fill Downloads/su-san.jpg

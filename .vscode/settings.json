@@ -1,0 +1,27 @@
+{
+    "workbench.colorTheme": "Shades of Purple",
+    "editor.fontSize": 17,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.panel.defaultLocation": "right",
+    "editor.wordWrap": "on",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "tabnine.experimentalAutoImports": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.fontSize": 16,
+    "telemetry.enableTelemetry": false,
+    "glassit.alpha": 230,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "vscode-icons",
+
+    // Vim stuff.
+    "vim.insertModeKeyBindings": [
+        {
+          "before": ["j", "j"],
+          "after": ["<Esc>"]
+        }
+      ],
+      "editor.largeFileOptimizations": false,
+}

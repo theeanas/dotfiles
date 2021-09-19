@@ -19,7 +19,7 @@ cp -v i3blocks.conf ~/.config/i3/
 # Install required packages for customization
 echo -e ${GREEN}Installing required packages for customization
 apt-get install -y pulseaudio-utils playerctl xbacklight
-apt-get install -y feh gnome-icon-theme-full rofi compton
+apt-get install -y feh gnome-icon-theme rofi compton
 
 # Get fonts
 echo -e ${GREEN}Get fonts

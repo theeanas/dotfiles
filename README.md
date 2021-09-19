@@ -1,14 +1,15 @@
 # setupi3
 
-This is an experimental project to setup up a nice i3 desktop environment running on Ubuntu 15.04.
+This is an experimental project to setup up a nice i3 desktop environment running on Ubuntu 20.04.
 
 The setup steps are mostly following this youtube tutorial by Alex:
 https://www.youtube.com/watch?v=j1I63wGcvU4.
 
 ## Usage:
 
+Note: the git repo contains more than what you need, all of my dotfiles.
 ```
-git clone https://github.com/Xunius/setupi3.git && cd setupi3
+git clone https://github.com/hash0anas/dotfiles.git setupi3 && cd setupi3
 sudo ./setupi3.sh
 ```
 

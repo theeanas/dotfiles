@@ -45,21 +45,25 @@ font pango:System San Francisco Display 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Make these apps open in floating mode.
+for_window [class="Gnome-calculator"] floating enable
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start file gui manager
 bindsym $mod+backslash exec nautilus
 
-bindsym $mod+shift+s exec gnome-screenshot
-
+#interactive screenshot by pressing printscreen
+bindsym Print exec gnome-screenshot -i 
+#crop-area screenshot by pressing Mod + printscreen
+bindsym $mod+Print exec gnome-screenshot -a
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 40 -padding 800 -opacity "75" -bw 0 -bg "$base01" -fg "$base03" -altbg "$base01" -hlbg "$base01" -hlfg "#base03" -font "System San Francisco Display 14"
+bindsym $mod+d exec rofi -show run -theme DarkBlue -lines 5 -eh 2 -width 40 -padding 800 -opacity "75" -bw 0 -bg "$base01" -fg "$base03" -altbg "$base01" -hlbg "$base01" -hlfg "#base03" -font "System San Francisco Display 14"
 bindsym $mod+Tab exec rofi -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -240,9 +244,9 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+  #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle #pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness

@@ -51,12 +51,16 @@ for_window [class="Gnome-calculator"] floating enable
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start my competitive programming layout, in workspace #3.
+bindsym $mod+Shift+Return exec "i3-msg 'workspace 3: Code ; append_layout /home/pc-377/.config/i3/cp-workspace.json'; gnome-terminal --working-directory=/home/pc-377/cp; gnome-terminal; code /home/pc-377/cp"
+
 # start file gui manager
 bindsym $mod+backslash exec nautilus
 
-#interactive screenshot by pressing printscreen
+# interactive screenshot by pressing printscreen
 bindsym Print exec gnome-screenshot -i 
-#crop-area screenshot by pressing Mod + printscreen
+
+# crop-area screenshot by pressing Mod + printscreen
 bindsym $mod+Print exec gnome-screenshot -a
 
 # kill focused window
@@ -65,10 +69,6 @@ bindsym $mod+Shift+q kill
 # start rofi
 bindsym $mod+d exec rofi -show run -theme DarkBlue -lines 5 -eh 2 -width 40 -padding 800 -opacity "75" -bw 0 -bg "$base01" -fg "$base03" -altbg "$base01" -hlbg "$base01" -hlfg "#base03" -font "System San Francisco Display 14"
 bindsym $mod+Tab exec rofi -show window
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -171,6 +171,7 @@ assign [class="GNS3"] $workspace4
 assign [class="wireshark"] $workspace4
 assign [class="Vmware"] $workspace5
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -268,8 +269,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
-exec_always compton -f
+exec_always --no-startup-id compton -f
 
 # Set wallpaper, needs feh installed.
-exec_always feh --bg-fill Downloads/su-san.jpg
+exec_always feh --bg-fill Downloads/su-san4.jpg
 

@@ -223,6 +223,8 @@ bindsym $mod+r mode "resize"
 
 bar {
         #status_command i3status
+        i3bar_command i3bar --transparency
+
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	font pango: System San Francisco Display, FontAwesome 12
         position top
@@ -272,7 +274,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
-exec_always --no-startup-id compton -f
+exec_always --no-startup-id compton -f --config ~/.config/compton.conf
 
 # Set wallpaper, needs feh installed.
 exec_always feh --bg-fill Downloads/su-san4.jpg

@@ -32,10 +32,11 @@ floating_modifier $mod
 for_window [class="Gnome-calculator"] floating enable
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+ bindsym $mod+Return exec alacritty
 
-# start my cp layout.
-bindsym $mod+Shift+Return exec "i3-msg 'workspace 3: Code ; append_layout /home/pc-377/.config/i3/cp-workspace.json'; gnome-terminal --working-directory=/home/pc-377/cp; gnome-terminal; code /home/pc-377/cp"
+# start my cp layout. Fix it by making alacritty start in bg as daemon
+bindsym $mod+Shift+Return exec "i3-msg 'workspace 3: Code ; append_layout /home/pc-377/.config/i3/cp-workspace.json'; alacritty --working-directory /home/pc-377/cp & alacritty & code /home/pc-377/cp" 
 
 # start file gui manager
 bindsym $mod+backslash exec nautilus
@@ -258,6 +259,6 @@ smart_borders no_gaps
 # Hide edge borders only if there is one window with no gaps
 hide_edge_borders smart_no_gaps
 
-gaps inner 10
+gaps inner 7 
 gaps outer 0 
 

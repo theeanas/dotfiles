@@ -1,6 +1,10 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# At the the top, so when i3 refreshes, windows should still be transparent.
+exec_always --no-startup-id compton -f --config ~/.config/compton.conf
+exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
+
 set $mod Mod4
 set $base00 #101218
 set $base01 #1f222d
@@ -108,10 +112,10 @@ set $workspace2 "2: Terminal "
 set $workspace3 "3: Code "
 set $workspace4 "4: Networking "
 set $workspace5 "5: VM  "
-set $workspace6 "6: _" 
-set $workspace7 "7: _" 
+set $workspace6 "6: 6" 
+set $workspace7 "7: 7" 
 set $workspace8 "8: Later " 
-set $workspace9 "9: _"
+set $workspace9 "9: 9"
 set $workspace10 "10: CP "
 
 # switch to workspace
@@ -142,6 +146,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="Firefox"] $workspace1
 assign [class="chrome"] $workspace1
 assign [class="Gnome-terminal"] $workspace2
+assign [class="Alacritty"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="Vncviewer"] $workspace3
 assign [class="GNS3"] $workspace4
@@ -239,7 +244,6 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
-exec_always --no-startup-id compton -f --config ~/.config/compton.conf
 
 # Set wallpaper, needs feh installed.
 exec_always feh --bg-fill Downloads/su-san4.jpg

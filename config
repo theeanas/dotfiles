@@ -3,7 +3,7 @@
 
 # At the the top, so when i3 refreshes, windows should still be transparent.
 exec_always --no-startup-id compton -f --config ~/.config/compton.conf
-exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
+exec_always setxkbmap us,ara -option "lv3:ralt_alt,grp:win_space_toggle"
 
 set $mod Mod4
 set $base00 #101218
@@ -244,6 +244,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
+
+exec_always sh /home/pc-377/dotfiles/start-gnome-keyring.sh
 
 # Set wallpaper, needs feh installed.
 exec_always feh --bg-fill Downloads/su-san4.jpg

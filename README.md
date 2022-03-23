@@ -1,17 +1,14 @@
-Disclaimer: Some stuff are getting outdated, and I haven't had the time, or more frankly the need to update it.
-It should work fine mostly, but some errors shouldn't come as a shock.
-
 # setupi3
-This is an experimental project to setup up a nice i3 desktop environment running on Ubuntu 20.04.
+
+This is an experimental project to setup up a nice i3 desktop environment running on Ubuntu 15.04.
 
 The setup steps are mostly following this youtube tutorial by Alex:
 https://www.youtube.com/watch?v=j1I63wGcvU4.
 
 ## Usage:
 
-Note: the git repo contains more than what you need, all of my dotfiles.
 ```
-git clone https://github.com/hash0anas/dotfiles.git setupi3 && cd setupi3
+git clone https://github.com/Xunius/setupi3.git && cd setupi3
 sudo ./setupi3.sh
 ```
 
@@ -27,8 +24,17 @@ sudo apt-get install i3 i3-wm i3blocks i3lock i3status
 
 The configure file for i3 is located (by default) at:
 ```
-~/.config/i3/
+~/.i3/config
 ```
+
+Download the files from dropbox
+```
+dropbox/dotfiles/i3/config i3blocks.conf toggletouchpad.sh
+```
+and save to the above folder.
+
+
+
 
 ### Enable multimedia keys
 
@@ -56,6 +62,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# Touchpad controls
+bindsym XF86TouchpadToggle exec ~/.i3/toggletouchpad.sh # toggle touchpad
 ```
 
 bindsym XF86AudioPlay exec playerctl play
@@ -64,7 +72,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-4. [Optional] Create a `toggletouchpad.sh` script in the `~/.config/i3` directory, with the following content:
+4. Create a `toggletouchpad.sh` script in the `~/.i3/` directory, with the following content:
 
 ```
 #!/bin/bash
@@ -180,10 +188,12 @@ cp /etc/i3blocks.conf ~/.i3/
 
 3. Edit the `~/.i3/i3blocks.conf` file.
 
+
+
+
 ### Fix the **volume** bar block problem
 
 The command i3blocks uses to detect the system volume is located
 at `/usr/share/i3blocks/volume`.
 
 Need to change this to `/usr/share/i3blocks/volume 5 pulse` to correctly detect. This should be added in the [volume] section in the `i3blocks.conf` file.
-

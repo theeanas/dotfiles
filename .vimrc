@@ -19,6 +19,7 @@ Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
 
 " Bundles .. mine
+Plugin 'zhou13/vim-easyescape'
 
 call vundle#end()
 
@@ -162,6 +163,20 @@ set noesckeys
 
 set nocompatible
 
+" make line numbers relative to the cursor's position.
+set relativenumber
+
 " set the interactive flag so bash functions are sourced from ~/.bashrc etc
 "set shellcmdflag=-ci
 
+set clipboard=unnamedplus
+
+" move lines up/down with alt j,k.
+execute "set <A-j>=\ej"
+execute "set <A-k>=\ek"
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv

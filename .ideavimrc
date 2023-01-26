@@ -1,0 +1,20 @@
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+let mapleader = " " " map leader to Space
+
+set sneak
+set which-key
+set notimeout 
+let g:WhichKey_ShowVimActions = "true"
+
+" forward
+map <leader>f <Plug>(easymotion-f)
+" backward
+map <leader>F <Plug>(easymotion-s)
+
+" quick escape.
+inoremap kj <Esc>
+inoremap kk <Esc>
+
+" Their terminal is good!
+nnoremap <c-t> :action ActivateTerminalToolWindow<cr>

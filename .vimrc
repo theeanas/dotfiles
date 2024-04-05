@@ -5,21 +5,18 @@ let g:vundle_default_git_proto = 'git'
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Bundles .. Tomnomnom's
+" Bundles
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'sjl/gundo.vim'
-Plugin 'godlygeek/tabular'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'sjl/gundo.vim'
+" Plugin 'godlygeek/tabular'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'TomNomNom/xoria256.vim'
-Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
-
-" Bundles .. mine
-Plugin 'zhou13/vim-easyescape'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'TomNomNom/xoria256.vim'
+" Plugin 'fatih/vim-go'
+" Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
@@ -65,7 +62,6 @@ set gdefault
 set hlsearch
 set showmatch
 
-nnoremap <CR> :noh<CR>
 " Enable jumping into files in a search buffer
 set hidden 
 
@@ -163,20 +159,5 @@ set noesckeys
 
 set nocompatible
 
-" make line numbers relative to the cursor's position.
-set relativenumber
-
 " set the interactive flag so bash functions are sourced from ~/.bashrc etc
 "set shellcmdflag=-ci
-
-set clipboard=unnamedplus
-
-" move lines up/down with alt j,k.
-execute "set <A-j>=\ej"
-execute "set <A-k>=\ek"
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv

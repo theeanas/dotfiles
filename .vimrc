@@ -51,6 +51,7 @@ set nu
 set nowrap
 set linebreak
 set showbreak=▹
+set relativenumber
 
 " Auto indent what you can
 set autoindent

@@ -37,6 +37,7 @@ lfcd () {
         rm -f "$tmp"
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
+    zle accept-line
 }
 zle -N lfcd
 bindkey -a '^O' lfcd
@@ -113,5 +114,17 @@ function vimod {
 # Open all modified files in vim tabs
 function charmmod {
    pycharm -p $(git status -suall | awk '{print $2}')
+}
+
+# exec'ing into a container just to run a test is a little too much.
+function bendtest {
+    local test_path=$1
+    local abs_path=$(realpath ${test_path})
+    local container_path=${abs_path#*backend/}  # hash sign is trim shortest matching prefix
+    echo ${abs_path}\n
+    echo ${container_path}\n
+    cd ~/eta # docker-compose can't look everywhere for its files!
+    docker-compose exec backend pytest "$container_path" "${@:2}"
+    cd - # let's get back
 }
 

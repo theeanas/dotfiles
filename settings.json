@@ -1,0 +1,144 @@
+{
+    "editor.fontFamily": "'monospace'",
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.activityBar.location": "top",
+    "vscode-neovim.neovimExecutablePaths.linux": "/snap/bin/nvim",
+    "database-client.saveConnectionExpandedState": true,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "0"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "9"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "t"
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ]
+        },
+        {
+            "before": [
+                "<space>", "w"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-p>": false,
+        "<C-b>": false,
+        "<C-k>": false
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.lineNumbers": "relative",
+    "editor.wordWrap": "on",
+    "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
+    "window.menuBarVisibility": "toggle",
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "animations.Install-Method": "Apc Customize UI++",
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+    ],
+    "workbench.colorTheme": "Monokai Pro",
+    "editor.rulers": [
+        120
+    ]
+}

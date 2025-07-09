@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 ### START-OF-ICON-MAP
-function icon_map() {
+function __icon_map() {
     case "$1" in
    "Live")
         icon_result=":ableton:"
         ;;
-   "Adobe Bridge 2024")
+   "Adobe Bridge"*)
         icon_result=":adobe_bridge:"
         ;;
    "Affinity Designer")
@@ -66,6 +66,9 @@ function icon_map() {
    "MoneyMoney")
         icon_result=":bank:"
         ;;
+   "Battle.net")
+        icon_result=":battle_net:"
+        ;;
    "Bear")
         icon_result=":bear:"
         ;;
@@ -113,6 +116,9 @@ function icon_map() {
         ;;
    "CotEditor")
         icon_result=":coteditor:"
+        ;;
+   "Creative Cloud")
+        icon_result=":creative_cloud:"
         ;;
    "Cypress")
         icon_result=":cypress:"
@@ -285,7 +291,7 @@ function icon_map() {
    "Logseq")
         icon_result=":logseq:"
         ;;
-   "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "Superhuman" | "邮件")
+   "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "Superhuman" | "Spark" | "邮件")
         icon_result=":mail:"
         ;;
    "MAMP" | "MAMP PRO")
@@ -420,6 +426,9 @@ function icon_map() {
    "Adobe Photoshop"*)
         icon_result=":photoshop:"
         ;;
+   "PhpStorm")
+        icon_result=":php_storm:"
+        ;;
    "Pi-hole Remote")
         icon_result=":pihole:"
         ;;
@@ -434,6 +443,9 @@ function icon_map() {
         ;;
    "Postman")
         icon_result=":postman:"
+        ;;
+   "Proton Mail" | "Proton Mail Bridge")
+        icon_result=":proton_mail:"
         ;;
    "PrusaSlicer" | "SuperSlicer")
         icon_result=":prusaslicer:"
@@ -621,6 +633,5 @@ function icon_map() {
     esac
 }
 ### END-OF-ICON-MAP
-icon_map "$1"
-
+__icon_map "$1"
 echo "$icon_result"
